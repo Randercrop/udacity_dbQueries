@@ -68,7 +68,7 @@ if __name__ == "__main__":
     for i in daysFailed:
         if(i[1] > 1):
             print(
-                '%(date)s had a fail rate of %(failPercentage)f\n'
+                '%(date)s with a fail rate of %(failPercentage)f\n'
                 % {'date': i[0], 'failPercentage': i[1]})
 
     db.close()
