@@ -10,4 +10,4 @@ Anonymous Contributor with a lifetime total of 170098 views
 Markoff Chaney with a lifetime total of 84557 views
 
 The days with errors greater than 1% are:
-2016-07-17 had a fail rate of 2.262686
+2016-07-17 with a fail rate of 2.262686
