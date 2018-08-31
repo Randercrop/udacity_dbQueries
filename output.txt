@@ -1,0 +1,13 @@
+The top 3 articles are:
+/article/candidate-is-jerk with a total of 338647 views
+/article/bears-love-berries with a total of 253801 views
+/article/bad-things-gone with a total of 170098 views
+
+The ranking of best authors of all time are:
+Ursula La Multa with a lifetime total of 507594 views
+Rudolf von Treppenwitz with a lifetime total of 423457 views
+Anonymous Contributor with a lifetime total of 170098 views
+Markoff Chaney with a lifetime total of 84557 views
+
+The days with errors greater than 1% are:
+2016-07-17 had a fail rate of 2.262686
