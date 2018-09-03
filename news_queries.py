@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import psycopg2
 
 DBNAME = "news"
@@ -7,7 +9,7 @@ SELECT
     path
 FROM log
 WHERE
-    status like '200%' and
+    status like '200 OK' and
     method like 'GET'
 GROUP BY path
 ORDER BY num desc limit 3 offset 1'''
@@ -19,7 +21,7 @@ SELECT
 FROM (articles join authors on articles.author=authors.id) as artiAuth
 JOIN log on position(artiAuth.slug in log.path) > 0
 WHERE
-    log.status like '200%' and
+    log.status like '200 OK' and
     method like 'GET'
 GROUP BY name
 ORDER BY num desc'''
@@ -35,7 +37,7 @@ FROM
         date(log.time) AS statusDate,
         count(log.status)
             AS total_status_count,
-        count(log.status) filter (where log.status like '404%')
+        count(log.status) filter (where log.status like '404 NOT FOUND')
             AS bad_status_count
     FROM log
     GROUP BY date(log.time)
@@ -44,7 +46,14 @@ AS allStatus
 ORDER BY fractionFailed desc'''
 
 if __name__ == "__main__":
-    db = psycopg2.connect(database=DBNAME)
+    try:
+        db = psycopg2.connect(database=DBNAME)
+    except psycopg2.Error as e:
+        print "Error connecting to the database"
+        sys.exit(1)
+    else:
+        print "connection succesful!"
+
     cursor = db.cursor()
     cursor.execute(popularArtists)
     topArticles = cursor.fetchall()
