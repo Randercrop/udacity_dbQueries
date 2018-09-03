@@ -1,3 +1,5 @@
+connection succesful!
+
 The top 3 articles are:
 /article/candidate-is-jerk with a total of 338647 views
 /article/bears-love-berries with a total of 253801 views
